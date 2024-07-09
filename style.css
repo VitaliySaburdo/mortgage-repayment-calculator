@@ -1,8 +1,44 @@
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+ul,
+ol{
+  list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 body {
-    font-size: 16px;
-    color: #0e1c28;
+  font-size: 16px;
+  color: #0e1c28;
+  letter-spacing: normal;
+  background-color: #e3f4fc;
 }
