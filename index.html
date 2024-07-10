@@ -47,10 +47,14 @@
                 <span class="side_indicator right_side">%</span>
                 <input class="right_side" type="number" />
               </label>
-              <label class="radio_label">
+              <label class="mortgage-type">
                 Mortgage Type
-                <div class="input_wrapper"><input type="radio" name="mortgage-type" value="repayment" /> Repayment</div>
-                <input type="radio" name="mortgage-type" value="interest-only" /> Interest only
+                <label class="input_wrapper">
+                  <input type="radio" name="mortgage-type" value="repayment" /> Repayment
+                </label>
+                <label class="input_wrapper"
+                  ><input type="radio" name="mortgage-type" value="interest-only" /> Interest only
+                </label>
               </label>
               <button id="btn">Calculate Repayment</button>
             </form>

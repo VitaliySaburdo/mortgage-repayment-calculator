@@ -109,18 +109,54 @@ label > input[type='number'], .input_wrapper {
   cursor: pointer;
   outline: none;
   font-weight: 700;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  gap: 10px; */
 }
+
+/* Icon */
 
 input[type='radio'] {
-  border-color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid hsl(200, 24%, 40%); 
+  border-radius: 50%; 
+  background-color: inherit; 
+  outline: none; 
+  cursor: pointer;
+  position: relative;
+  margin: 0 10px 0 15px;
 }
 
-.radio_label {
-  display: inline-block; /* Обеспечиваем корректное расположение элементов */
+input[type='radio']::before {
+  content: ''; 
+  display: none; 
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%; 
+  background-color: transparent; 
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
 }
+
+/* Стили для выбранной радиокнопки */
+input[type='radio']:checked::before {
+  display: block;
+  background-color: hsl(61, 70%, 52%);
+}
+
+input[type='radio']:checked {
+  border: 1px solid hsl(61, 70%, 52%); 
+}
+
+
 
 label > input.left_side {
   padding-left: 60px;
