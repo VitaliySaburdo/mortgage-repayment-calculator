@@ -101,7 +101,7 @@ form > label {
   margin-bottom: 30px;
 }
 
-label > input[type='number'] {
+label > input[type='number'], .input_wrapper {
   margin-top: 15px;
   height: 48px;
   border-radius: 5px;
@@ -109,6 +109,17 @@ label > input[type='number'] {
   cursor: pointer;
   outline: none;
   font-weight: 700;
+  /* display: flex;
+  align-items: center;
+  gap: 10px; */
+}
+
+input[type='radio'] {
+  border-color: inherit;
+}
+
+.radio_label {
+  display: inline-block; /* Обеспечиваем корректное расположение элементов */
 }
 
 label > input.left_side {
