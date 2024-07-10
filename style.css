@@ -101,7 +101,7 @@ form > label {
   margin-bottom: 30px;
 }
 
-label > input[type='number'], .input_wrapper {
+label > input[type='number'] {
   margin-top: 15px;
   height: 48px;
   border-radius: 5px;
@@ -114,7 +114,6 @@ label > input[type='number'], .input_wrapper {
 }
 
 /* Icon */
-
 input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
@@ -123,40 +122,66 @@ input[type='radio'] {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 1px solid hsl(200, 24%, 40%); 
-  border-radius: 50%; 
-  background-color: inherit; 
-  outline: none; 
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 50%;
+  background-color: inherit;
+  outline: none;
   cursor: pointer;
   position: relative;
   margin: 0 10px 0 15px;
 }
 
+.input_wrapper:first-child {
+  margin-top: 20px;
+}
+
+.input_wrapper:last-child {
+  margin-top: 40px;
+}
+
 input[type='radio']::before {
-  content: ''; 
-  display: none; 
-  width: 10px; 
+  content: '';
+  display: none;
+  width: 10px;
   height: 10px;
-  border-radius: 50%; 
-  background-color: transparent; 
-  position: absolute; 
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: background-color 0.3s ease;
 }
 
-/* Стили для выбранной радиокнопки */
+input[type='radio']::after {
+  content: '';
+  position: absolute;
+  left: -17px;
+  top: -13px;
+  height: 48px;
+  width: 330px;
+  border-radius: 5px;
+  border: 2px solid hsl(200, 24%, 40%);
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
 input[type='radio']:checked::before {
   display: block;
   background-color: hsl(61, 70%, 52%);
 }
 
-input[type='radio']:checked {
-  border: 1px solid hsl(61, 70%, 52%); 
+input[type='radio']:checked::after {
+  border-color: hsl(61, 70%, 52%);
+  background-color: hsla(61, 70%, 52%, 0.1);
 }
 
-
+input[type='radio']:checked {
+  border: 1px solid hsl(61, 70%, 52%);
+}
 
 label > input.left_side {
   padding-left: 60px;
@@ -165,7 +190,6 @@ label > input.left_side {
 label > input.right_side {
   padding-left: 15px;
 }
-
 
 .side_indicator {
   position: absolute;
@@ -192,7 +216,7 @@ label > span.right_side {
 }
 
 label > input:hover {
-  border-color: hsl(200, 26%, 54%); 
+  border-color: hsl(200, 26%, 54%);
 }
 
 button#btn {
