@@ -10,12 +10,8 @@ ol {
 }
 
 ul,
-ol{
+ol {
   list-style: none;
-}
-
-a {
-    text-decoration: none;
 }
 
 body,
@@ -26,18 +22,133 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
+  margin: 0;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 16px;
-  color: #0e1c28;
+  font-weight: 500;
+  color: hsl(208, 48%, 11%);
   letter-spacing: normal;
-  background-color: #e3f4fc;
+  background-color: hsl(199, 81%, 94%);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+  }
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.box {
+  padding: 39px 23px 30px 23px;
+  background-color: hsl(0, 0%, 100%);
+  outline: 1px solid hsl(0, 0%, 0%);
+}
+
+.title {
+  margin-bottom: 19px;
+}
+
+a.link {
+  display: block;
+  color: inherit;
+  text-decoration-line: underline;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+div > form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+label > input[type='number'] {
+  margin-top: 15px;
+  height: 48px;
+  border-radius: 5px;
+  border: 2px solid hsl(200, 24%, 40%);
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+}
+
+label > input.left_side {
+  padding-left: 60px;
+}
+
+label > input.right_side {
+  padding-left: 15px;
+}
+
+
+.side_indicator {
+  position: absolute;
+  bottom: 2px;
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 44px;
+  background-color: hsl(202, 86%, 94%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+label > span.left_side {
+  left: 2px;
+  border-radius: 5px 0 0 5px;
+}
+
+label > span.right_side {
+  right: 2px;
+  border-radius: 0 5px 5px 0;
+}
+
+label > input:hover {
+  border-color: hsl(200, 26%, 54%); 
+}
+
+button#btn {
+  margin-left: auto;
+  margin-right: auto;
 }

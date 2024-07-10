@@ -8,22 +8,58 @@
 
     <!-- Modern normalize -->
     <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css" />
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css" />
-
 
     <title>Frontend Mentor | Mortgage repayment calculator</title>
   </head>
 
   <body>
-    <h1>TEST</h1>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ul>
+    <header class="visually-hidden"></header>
+    <main>
+      <section class="section">
+        <h1 class="visually-hidden">Mortgage repayment calculator</h1>
+        <div class="container">
+          <div class="box">
+            <h2 class="title">Mortgage Calculator</h2>
+            <a class="link">Clear All</a>
+            <form>
+              <label
+                >Mortgage Amount
+                <span class=" side_indicator left_side">£</span>
+                <input class="left_side" type="number" />
+              </label>
+              <label
+                >Mortgage Term
+                <span class="side_indicator right_side">years</span>
+                <input class="right_side" type="number" />
+              </label>
+              <label
+                >Interest Rate
+                <span class="side_indicator right_side">%</span>
+                <input class="right_side" type="number" />
+              </label>
+              <label class="radio_label">
+                Mortgage Type
+                <input type="radio" name="mortgage-type" value="repayment" /> Repayment
+                <input type="radio" name="mortgage-type" value="interest-only" /> Interest only
+              </label>
+              <button id="btn">Calculate Repayment</button>
+            </form>
+          </div>
+        </div>
+        <div class="answer">
+        </div>
+      </section>
+    </main>
+    <footer class="visually-hidden"></footer>
   </body>
 </html>
