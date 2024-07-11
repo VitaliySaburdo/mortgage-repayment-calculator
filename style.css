@@ -81,6 +81,7 @@ body {
   outline: 1px solid hsl(0, 0%, 0%);
   @media screen and (min-width: 768px) {
     padding: 45px 40px 40px 40px;
+    border-radius: 20px 20px 0 0;
   }
 }
 
@@ -96,11 +97,6 @@ a.link {
   cursor: pointer;
 }
 
-div > form {
-  display: flex;
-  flex-direction: column;
-}
-
 label {
   position: relative;
 }
@@ -112,6 +108,7 @@ label {
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+    gap: 20px;
   }
 }
 
@@ -159,11 +156,17 @@ input[type='radio'] {
 
 .input_wrapper:first-child {
   margin-top: 30px;
+  @media screen and (min-width: 768px) {
+    margin-top: 15px;
+  }
 }
 
 .input_wrapper:last-child {
   margin-top: 10px;
   margin-bottom: 22px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
 }
 
 input[type='radio']::before {
@@ -249,8 +252,6 @@ button#btn {
   height: 56px;
   border: none;
   border-radius: 40px;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 16px;
   font-weight: 700;
   background-color: hsl(61, 70%, 52%);
@@ -259,6 +260,10 @@ button#btn {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  @media screen and (min-width: 768px) {
+    margin-right: auto;
+    width: 315px;
+  }
 }
 
 .answer {
