@@ -68,7 +68,6 @@ body {
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    display: flex;
   }
 }
 
@@ -76,10 +75,20 @@ body {
   margin-top: 50px;
 }
 
+.main_wrapper {
+  @media screen and (min-width: 768px) {
+    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.27);
+  }
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+}
+
 .box {
   padding: 39px 23px 30px 23px;
   background-color: hsl(0, 0%, 100%);
   outline: 1px solid hsl(0, 0%, 0%);
+  /* overflow: hidden; */
   @media screen and (min-width: 768px) {
     padding: 45px 40px 40px 40px;
     border-radius: 20px 20px 0 0;
@@ -91,7 +100,7 @@ body {
 }
 
 .title_type {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 a.link {
@@ -176,7 +185,6 @@ input[type='radio']::before {
   font-weight: 700;
   display: flex;
   align-items: center;
-  
 }
 
 .input_wrapper:first-child {
@@ -203,7 +211,6 @@ input[type='radio']:focus::before {
   border-color: hsl(61, 70%, 52%);
   background-color: hsla(61, 70%, 52%, 0.1);
 }
-
 
 input[type='radio']:focus {
   border: 1px solid hsl(61, 70%, 52%);
@@ -269,4 +276,24 @@ button#btn {
   width: 100%;
   padding: 35px 20px 30px 20px;
   background-color: hsl(202, 55%, 16%);
+  @media screen and (min-width: 768px) {
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+.answer_img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+}
+
+.title_answer {
+  text-align: center;
+  color: hsl(202, 86%, 94%);
+  margin-bottom: 20px;
+}
+
+.text_answer {
+  text-align: center;
+  color: hsl(203, 41%, 72%);
 }
