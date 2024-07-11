@@ -90,6 +90,10 @@ body {
   margin-bottom: 19px;
 }
 
+.title_type {
+  margin-bottom: 15px; 
+}
+
 a.link {
   display: block;
   color: inherit;
@@ -105,11 +109,10 @@ label {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
   }
 }
 
@@ -149,27 +152,6 @@ input[type='radio'] {
   margin: 0 10px 0 15px;
 }
 
-.input_wrapper {
-  display: flex;
-  align-items: flex-end;
-  font-weight: 700;
-}
-
-.input_wrapper:first-child {
-  margin-top: 30px;
-  @media screen and (min-width: 768px) {
-    margin-top: 15px;
-  }
-}
-
-.input_wrapper:last-child {
-  margin-top: 10px;
-  margin-bottom: 22px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 40px;
-  }
-}
-
 input[type='radio']::before {
   content: '';
   display: none;
@@ -194,6 +176,22 @@ input[type='radio']::before {
   font-weight: 700;
   display: flex;
   align-items: center;
+  
+}
+
+.input_wrapper:first-child {
+  margin-top: 30px;
+  @media screen and (min-width: 768px) {
+    margin-top: 15px;
+  }
+}
+
+.input_wrapper:last-child {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
 }
 
 input[type='radio']:focus::before {
