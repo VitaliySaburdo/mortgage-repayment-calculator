@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
     <!-- Modern normalize -->
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css" />
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
 
     <title>Frontend Mentor | Mortgage repayment calculator</title>
   </head>
 
-  <body>
+    <body>
     <header class="visually-hidden"></header>
     <main>
       <section class="section">
         <h1 class="visually-hidden">Mortgage repayment calculator</h1>
         <div class="container">
+          <div class="main_wrapper">
           <div class="box">
             <h2 class="title">Mortgage Calculator</h2>
             <a class="link">Clear All</a>
             <form>
-              <label
-                >Mortgage Amount
+              <label>
+                Mortgage Amount
                 <span class="side_indicator left_side">£</span>
-                <input class="left_side" type="number" />
+                <input class="left_side" type="number">
               </label>
               <div class="wrapper">
-                <label
-                  >Mortgage Term
+                <label>
+                  Mortgage Term
                   <span class="side_indicator right_side">years</span>
-                  <input class="right_side" type="number" />
+                  <input class="right_side" type="number">
                 </label>
-                <label
-                  >Interest Rate
+                <label>
+                  Interest Rate
                   <span class="side_indicator right_side">%</span>
-                  <input class="right_side" type="number" />
+                  <input class="right_side" type="number">
                 </label>
               </div>
-              <label class="mortgage-type">
-                Mortgage Type
+                <h3>Mortgage Type</h3>
                 <label class="input_wrapper">
-                  <input type="radio" name="mortgage-type" value="repayment" /> Repayment
+                  <input type="radio" name="mortgage-type" value="repayment"> Repayment
                 </label>
-                <label class="input_wrapper"
-                  ><input type="radio" name="mortgage-type" value="interest-only" /> Interest only
+                <label class="input_wrapper">
+                  <input type="radio" name="mortgage-type" value="interest-only"> Interest only
                 </label>
-              </label>
               <button id="btn">
-                <img src="./assets/images/icon-calculator.svg" width="24" alt="icon-calculator" />
+                <img src="./assets/images/icon-calculator.svg" width="24" alt="icon-calculator">
                 Calculate Repayment
               </button>
             </form>
           </div>
           <div class="answer"></div>
+        </div>
         </div>
       </section>
     </main>
