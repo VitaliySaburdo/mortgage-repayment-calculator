@@ -98,7 +98,8 @@ form > label {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
+  font-weight: 700;
 }
 
 label > input[type='number'] {
@@ -131,12 +132,18 @@ input[type='radio'] {
   margin: 0 10px 0 15px;
 }
 
+.input_wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
 .input_wrapper:first-child {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .input_wrapper:last-child {
   margin-top: 40px;
+  /* margin-bottom: 36px; */
 }
 
 input[type='radio']::before {
@@ -220,6 +227,12 @@ label > input:hover {
 }
 
 button#btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 40px;
   margin-left: auto;
   margin-right: auto;
+  background-color: hsl(61, 70%, 52%);
+  cursor: pointer;
 }
