@@ -238,3 +238,9 @@ button#btn {
   justify-content: center;
   gap: 10px;
 }
+
+.answer {
+  width: 100%;
+  padding: 35px 20px 30px 20px;
+  background-color: hsl(202, 55%, 16%);
+}
