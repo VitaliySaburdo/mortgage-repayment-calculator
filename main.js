@@ -5,7 +5,8 @@ const mortgageTerm = document.getElementById('term');
 const interestRate = document.getElementById('rate');
 const mortgageType = document.querySelector('input[name="mortgage-type"]:checked');
 const calculateBtn = document.getElementById('btn');
-const errorMessage = document.querySelector('error_message');
+const errorMessage = document.querySelector('.error_message');
+
 
 form.addEventListener("submit", handleSubmit);
 
@@ -28,13 +29,10 @@ function handleSubmit (event) {
 
 
 mortgageAmount.addEventListener('input', function(e) {
-    console.log(e);
-    
-    if (input.validity.patternMismatch) {
-        errorMessage.style.display = 'block';
-        // validMessage.style.display = 'none';
+    const pattern = new RegExp('^\\d+([.,]\\d{1,2})?$');
+    if (!pattern.test(e.target.value)) {
+        errorMessage.style.visibility = 'visible';
     } else {
-        errorMessage.style.display = 'none';
-        // validMessage.style.display = 'block';
+        errorMessage.style.visibility = 'hidden';
     }
 });
