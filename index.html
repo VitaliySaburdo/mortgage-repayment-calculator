@@ -7,8 +7,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
     <!-- Modern normalize -->
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,6 +26,9 @@
     <link rel="stylesheet" href="./style.css" />
 
     <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- JS -->
+    <script src="./main.js" defer></script>
   </head>
 
   <body>
@@ -38,18 +47,38 @@
                 <label>
                   Mortgage Amount
                   <span class="side_indicator left_side">£</span>
-                  <input class="left_side" type="number" />
+                  <input
+                    class="left_side"
+                    type="text"
+                    id="amount"
+                    name="amount"
+                    pattern="^\d+(\.\d{1,2})?$"
+                  />
+                  <span class="error_message">Please enter correct data</span>
                 </label>
                 <div class="mortgage_wrapper">
                   <label>
                     Mortgage Term
                     <span class="side_indicator right_side">years</span>
-                    <input class="right_side" type="number" />
+                    <input
+                      class="right_side"
+                      type="text"
+                      id="term"
+                      name="term"
+                      pattern="^\d+(\.\d{1,2})?$"
+                    />
+                    
                   </label>
                   <label>
                     Interest Rate
                     <span class="side_indicator right_side">%</span>
-                    <input class="right_side" type="number" />
+                    <input
+                      class="right_side"
+                      type="text"
+                      id="rate"
+                      name="rate"
+                      pattern="^\d+(\.\d{1,2})?$"
+                    />
                   </label>
                 </div>
                 <div>
