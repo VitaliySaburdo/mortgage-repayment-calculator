@@ -166,8 +166,9 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .error_message {
-  visibility: visible;
-  position: absolute;
+  display: none;
+  color: hsl(4, 69%, 50%);
+  margin-bottom: 30px;
 }
 
 /* Icon */

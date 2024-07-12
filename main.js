@@ -15,7 +15,8 @@ function handleSubmit(event) {
   const rate = parseFloat(form.elements.rate.value);
 
   if (!amount || !term || !rate || !mortgageType.checked) {
-    console.log('error');
+      errorMessage.style.display = 'block'; 
+      mortgageAmount.style.borderColor = 'hsl(4, 69%, 50%)'
     return;
   }
 
