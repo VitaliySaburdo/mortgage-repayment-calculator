@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
 const inputs = document.querySelectorAll('input[type="number"]');
+const inputsSymbol = document.querySelectorAll('.side_indicator');
 const mortgageAmount = document.getElementById('amount');
 const mortgageTerm = document.getElementById('term');
 const interestRate = document.getElementById('rate');
@@ -15,10 +16,14 @@ function handleSubmit(event) {
   const term = parseInt(form.elements.term.value);
   const rate = parseFloat(form.elements.rate.value);
 
-    if (!amount || !term || !rate || !mortgageType.checked) {
-        inputs.forEach(item => item.style.borderColor = 'hsl(4, 69%, 50%)');
-        errorMessage.forEach(item => item.style.display = 'block')
-    //   errorMessage.style.display = 'block'; 
+  if (!amount || !term || !rate || !mortgageType.checked) {
+    inputs.forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
+    errorMessage.forEach(item => (item.style.display = 'block'));
+    inputsSymbol.forEach(item => {
+      item.style.backgroundColor = 'hsl(4, 69%, 50%)';
+      item.style.color = 'hsl(0, 0%, 100%)';
+    });
+    //   errorMessage.style.display = 'block';
     //   mortgageAmount.style.borderColor = 'hsl(4, 69%, 50%)'
     return;
   }
