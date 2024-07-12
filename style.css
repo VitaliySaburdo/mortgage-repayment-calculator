@@ -76,27 +76,44 @@ body {
 }
 
 .main_wrapper {
+  box-shadow: 0px 0px 50px -4px rgba(0, 0, 0, 0.27);
   @media screen and (min-width: 768px) {
-    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.27);
+    border-radius: 20px;
   }
   @media screen and (min-width: 1440px) {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
+    background-color: hsl(0, 0%, 100%);
+    width: 1008px;
   }
 }
 
-.box {
+.form_container {
   padding: 39px 23px 30px 23px;
   background-color: hsl(0, 0%, 100%);
-  outline: 1px solid hsl(0, 0%, 0%);
-  /* overflow: hidden; */
   @media screen and (min-width: 768px) {
-    padding: 45px 40px 40px 40px;
     border-radius: 20px 20px 0 0;
+    padding: 45px 40px 40px 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    border-radius: 20px 0 0 20px;
+  }
+}
+
+.title_wrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 }
 
 .title {
   margin-bottom: 19px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
 }
 
 .title_type {
@@ -115,7 +132,7 @@ label {
   position: relative;
 }
 
-.wrapper {
+.mortgage_wrapper {
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 768px) {
@@ -123,10 +140,6 @@ label {
     justify-content: space-between;
     gap: 30px;
   }
-}
-
-.wrapper > label {
-  flex: 1;
 }
 
 input[type='number'] {
@@ -237,6 +250,7 @@ label > input.right_side {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  color: hsl(200, 24%, 40%);
 }
 
 label > span.left_side {
@@ -272,12 +286,15 @@ button#btn {
   }
 }
 
-.answer {
-  width: 100%;
+.answer_container {
   padding: 35px 20px 30px 20px;
   background-color: hsl(202, 55%, 16%);
   @media screen and (min-width: 768px) {
     border-radius: 0 0 20px 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 152px 52px 152px 52px;
+    border-radius: 0 20px 20px 100px;
   }
 }
 
@@ -296,4 +313,7 @@ button#btn {
 .text_answer {
   text-align: center;
   color: hsl(203, 41%, 72%);
+  @media screen and (min-width: 1440px) {
+    width: 400px;
+  }
 }

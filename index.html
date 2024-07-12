@@ -29,16 +29,18 @@
         <h1 class="visually-hidden">Mortgage repayment calculator</h1>
         <div class="container">
           <div class="main_wrapper">
-            <div class="box">
-              <h2 class="title">Mortgage Calculator</h2>
-              <a class="link">Clear All</a>
+            <div class="form_container">
+              <div class="title_wrapper">
+                <h2 class="title">Mortgage Calculator</h2>
+                <a class="link">Clear All</a>
+              </div>
               <form>
                 <label>
                   Mortgage Amount
                   <span class="side_indicator left_side">£</span>
                   <input class="left_side" type="number" />
                 </label>
-                <div class="wrapper">
+                <div class="mortgage_wrapper">
                   <label>
                     Mortgage Term
                     <span class="side_indicator right_side">years</span>
@@ -65,8 +67,13 @@
                 </button>
               </form>
             </div>
-            <div class="answer">
-              <img class="answer_img" src="./assets/images/illustration-empty.svg" width="183" alt="calculator" />
+            <div class="answer_container">
+              <img
+                class="answer_img"
+                src="./assets/images/illustration-empty.svg"
+                width="183"
+                alt="calculator"
+              />
               <h2 class="title_answer">Result show here</h2>
               <p class="text_answer">
                 Complete the form and click "calculate repayments" to see what your monthly
