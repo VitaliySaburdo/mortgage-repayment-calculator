@@ -143,6 +143,9 @@ label {
 }
 
 input[type='number'] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
   margin-top: 15px;
   margin-bottom: 30px;
   width: 100%;
@@ -156,8 +159,15 @@ input[type='number'] {
   align-items: center;
 }
 
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .error_message {
-  visibility: hidden;
+  visibility: visible;
+  position: absolute;
 }
 
 /* Icon */
@@ -223,7 +233,7 @@ input[type='radio']::before {
   }
 }
 
-input[type='radio']:focus::before {
+input[type='radio']:checked::before {
   display: block;
   background-color: hsl(61, 70%, 52%);
 }
@@ -233,7 +243,7 @@ input[type='radio']:focus::before {
   background-color: hsla(61, 70%, 52%, 0.1);
 }
 
-input[type='radio']:focus {
+input[type='radio']:checked {
   border: 1px solid hsl(61, 70%, 52%);
 }
 
