@@ -142,7 +142,7 @@ label {
   }
 }
 
-input[type='text'] {
+input[type='number'] {
   margin-top: 15px;
   margin-bottom: 30px;
   width: 100%;

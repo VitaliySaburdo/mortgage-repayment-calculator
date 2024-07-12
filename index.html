@@ -47,38 +47,19 @@
                 <label>
                   Mortgage Amount
                   <span class="side_indicator left_side">£</span>
-                  <input
-                    class="left_side"
-                    type="text"
-                    id="amount"
-                    name="amount"
-                    pattern="^\\d+([.,]\\d{1,2})?$"
-                  />
+                  <input class="left_side" type="number" id="amount" name="amount" />
                   <span class="error_message">Please enter correct data</span>
                 </label>
                 <div class="mortgage_wrapper">
                   <label>
                     Mortgage Term
                     <span class="side_indicator right_side">years</span>
-                    <input
-                      class="right_side"
-                      type="text"
-                      id="term"
-                      name="term"
-                      pattern="^\d+(\.\d{1,2})?$"
-                    />
-                    
+                    <input class="right_side" type="number" id="term" name="term" />
                   </label>
                   <label>
                     Interest Rate
                     <span class="side_indicator right_side">%</span>
-                    <input
-                      class="right_side"
-                      type="text"
-                      id="rate"
-                      name="rate"
-                      pattern="^\d+(\.\d{1,2})?$"
-                    />
+                    <input class="right_side" type="number" id="rate" name="rate" />
                   </label>
                 </div>
                 <div>
