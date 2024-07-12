@@ -23,14 +23,19 @@ function handleSubmit(event) {
       item.style.backgroundColor = 'hsl(4, 69%, 50%)';
       item.style.color = 'hsl(0, 0%, 100%)';
     });
-    //   errorMessage.style.display = 'block';
-    //   mortgageAmount.style.borderColor = 'hsl(4, 69%, 50%)'
-    return;
+  } else {
+    inputs.forEach(item => (item.style.borderColor = 'hsl(203, 41%, 72%)'));
+    errorMessage.forEach(item => (item.style.display = 'none'));
+    inputsSymbol.forEach(item => {
+      item.style.backgroundColor = 'hsl(202, 86%, 94%)';
+      item.style.color = 'hsl(200, 24%, 40%)';
+    });
+
+
+    console.log(amount);
+
+    const monthlyRate = rate / 100 / 12;
+    const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
+    const totalPayment = monthlyPayment * term;
   }
-
-  console.log(amount);
-
-  const monthlyRate = rate / 100 / 12;
-  const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
-  const totalPayment = monthlyPayment * term;
 }
