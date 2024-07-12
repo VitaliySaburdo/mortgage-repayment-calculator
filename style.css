@@ -258,12 +258,12 @@ label > input.right_side {
 
 .side_indicator {
   position: absolute;
-  top: 35px;
+  top: 36px;
   bottom: 2px;
   display: block;
   padding-left: 15px;
   padding-right: 15px;
-  height: 45px;
+  height: 43px;
   background-color: hsl(202, 86%, 94%);
   display: flex;
   align-items: center;
