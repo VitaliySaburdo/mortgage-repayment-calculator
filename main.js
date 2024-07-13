@@ -16,21 +16,27 @@ function handleSubmit(event) {
   const term = parseInt(form.elements.term.value);
   const rate = parseFloat(form.elements.rate.value);
 
-  if (!amount || !term || !rate || !mortgageType.checked) {
-    inputs.forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
-    errorMessage.forEach(item => (item.style.display = 'block'));
-    inputsSymbol.forEach(item => {
-      item.style.backgroundColor = 'hsl(4, 69%, 50%)';
-      item.style.color = 'hsl(0, 0%, 100%)';
-    });
-  } else {
-    inputs.forEach(item => (item.style.borderColor = 'hsl(203, 41%, 72%)'));
-    errorMessage.forEach(item => (item.style.display = 'none'));
-    inputsSymbol.forEach(item => {
-      item.style.backgroundColor = 'hsl(202, 86%, 94%)';
-      item.style.color = 'hsl(200, 24%, 40%)';
-    });
+  if(!amount) {
+    document.getElementById('amount_error').style.display = 'block';
+    mortgageAmount.classList.add('input_error');
+    document.getElementById('amount_symbol').classList.add('side_indicator_error');
   }
+
+  // if (!amount || !term || !rate || !mortgageType.checked) {
+  //   inputs.forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
+  //   errorMessage.forEach(item => (item.style.display = 'block'));
+  //   inputsSymbol.forEach(item => {
+  //     item.style.backgroundColor = 'hsl(4, 69%, 50%)';
+  //     item.style.color = 'hsl(0, 0%, 100%)';
+  //   });
+  // } else {
+  //   inputs.forEach(item => (item.style.borderColor = 'hsl(203, 41%, 72%)'));
+  //   errorMessage.forEach(item => (item.style.display = 'none'));
+  //   inputsSymbol.forEach(item => {
+  //     item.style.backgroundColor = 'hsl(202, 86%, 94%)';
+  //     item.style.color = 'hsl(200, 24%, 40%)';
+  //   });
+  // }
   console.log(amount);
 
   const monthlyRate = rate / 100 / 12;
