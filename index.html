@@ -47,21 +47,21 @@
                 <label>
                   Mortgage Amount
                   <span class="side_indicator left_side">£</span>
-                  <input class="left_side" type="number" id="amount" name="amount" />
-                  <span class="error_message">This field is required</span>
+                  <input class="left_side" type="number" id="amount" name="amount" required />
+                  <span class="error_message" id="amount_error">This field is required</span>
                 </label>
                 <div class="mortgage_wrapper">
                   <label>
                     Mortgage Term
                     <span class="side_indicator right_side">years</span>
                     <input class="right_side" type="number" id="term" name="term" />
-                    <span class="error_message">This field is required</span>
+                    <span class="error_message" id="term_error">This field is required</span>
                   </label>
                   <label>
                     Interest Rate
                     <span class="side_indicator right_side">%</span>
                     <input class="right_side" type="number" id="rate" name="rate" />
-                    <span class="error_message">This field is required</span>
+                    <span class="error_message" id="rate_error">This field is required</span>
                   </label>
                 </div>
                 <div>
@@ -73,7 +73,7 @@
                     <input type="radio" name="mortgage-type" value="interest-only" /> Interest only
                   </label>
                 </div>
-                <span class="error_message">This field is required</span>
+                <span class="error_message" id="type_error">This field is required</span>
                 <button id="btn">
                   <img src="./assets/images/icon-calculator.svg" width="24" alt="icon-calculator" />
                   Calculate Repayment

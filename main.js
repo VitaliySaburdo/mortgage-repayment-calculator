@@ -30,12 +30,10 @@ function handleSubmit(event) {
       item.style.backgroundColor = 'hsl(202, 86%, 94%)';
       item.style.color = 'hsl(200, 24%, 40%)';
     });
-
-
-    console.log(amount);
-
-    const monthlyRate = rate / 100 / 12;
-    const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
-    const totalPayment = monthlyPayment * term;
   }
+  console.log(amount);
+
+  const monthlyRate = rate / 100 / 12;
+  const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
+  const totalPayment = monthlyPayment * term;
 }
