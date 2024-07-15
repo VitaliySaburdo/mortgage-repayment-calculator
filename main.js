@@ -20,6 +20,10 @@ function handleSubmit(event) {
     document.getElementById('amount_error').style.display = 'block';
     mortgageAmount.classList.add('input_error');
     document.getElementById('amount_symbol').classList.add('side_indicator_error');
+  } else {
+    document.getElementById('amount_error').style.display = 'none';
+    mortgageAmount.classList.remove('input_error');
+    document.getElementById('amount_symbol').classList.remove('side_indicator_error');
   }
 
   // if (!amount || !term || !rate || !mortgageType.checked) {
