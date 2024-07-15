@@ -128,10 +128,6 @@ a.link {
   cursor: pointer;
 }
 
-label {
-  position: relative;
-}
-
 .mortgage_wrapper {
   display: flex;
   flex-direction: column;
@@ -142,14 +138,19 @@ label {
   }
 }
 
-input[type='number'] {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-  appearance: textfield;
+.input_box {
+  position: relative;
   margin-top: 15px;
   margin-bottom: 30px;
   width: 100%;
   height: 48px;
+}
+input[type='number'] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   border: 2px solid hsl(203, 41%, 72%);
   cursor: pointer;
@@ -253,22 +254,32 @@ input[type='radio']:checked {
   border: 1px solid hsl(61, 70%, 52%);
 }
 
-label > input.left_side {
+input.left_side {
   padding-left: 60px;
 }
 
-label > input.right_side {
+input.right_side {
   padding-left: 15px;
+}
+
+.side_indicator.left_side {
+  top: 2px;
+  left: 2px;
+  border-radius: 2px 0 0 2px;
+}
+
+.side_indicator.right_side {
+  top: 2px;
+  right: 2px;
+  border-radius: 0 2px 2px 0;
 }
 
 .side_indicator {
   position: absolute;
-  top: 36px;
-  bottom: 2px;
   display: block;
   padding-left: 15px;
   padding-right: 15px;
-  height: 43px;
+  height: calc(100% - 4px);
   background-color: hsl(202, 86%, 94%);
   display: flex;
   align-items: center;

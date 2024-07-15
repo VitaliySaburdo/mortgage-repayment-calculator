@@ -44,25 +44,30 @@
                 <a class="link">Clear All</a>
               </div>
               <form>
-                <label>
-                  Mortgage Amount
+                <label> Mortgage Amount</label>
+                <div class="input_box">
                   <span class="side_indicator left_side" id="amount_symbol">£</span>
                   <input class="left_side" type="number" id="amount" name="amount" />
                   <span class="error_message" id="amount_error">This field is required</span>
-                </label>
+                </div>
+
                 <div class="mortgage_wrapper">
-                  <label>
-                    Mortgage Term
+                  <div style="display: flex; flex-direction: column;">
+                  <label> Mortgage Term</label>
+                  <div class="input_box">
                     <span class="side_indicator right_side">years</span>
                     <input class="right_side" type="number" id="term" name="term" />
                     <span class="error_message" id="term_error">This field is required</span>
-                  </label>
-                  <label>
-                    Interest Rate
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <label>Interest Rate</label>
+                  <div class="input_box">
                     <span class="side_indicator right_side">%</span>
                     <input class="right_side" type="number" id="rate" name="rate" />
                     <span class="error_message" id="rate_error">This field is required</span>
-                  </label>
+                  </div>
+                </div>
                 </div>
                 <div>
                   <h3 class="title_type">Mortgage Type</h3>
