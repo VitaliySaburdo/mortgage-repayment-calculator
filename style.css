@@ -277,6 +277,11 @@ label > input.right_side {
   color: hsl(200, 24%, 40%);
 }
 
+.side_indicator_error {
+  background-color: hsl(4, 69%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
 label > span.left_side {
   left: 2px;
   border-radius: 5px 0 0 5px;
