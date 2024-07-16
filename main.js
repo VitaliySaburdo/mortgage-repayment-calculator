@@ -16,32 +16,33 @@ function handleSubmit(event) {
   const term = parseInt(form.elements.term.value);
   const rate = parseFloat(form.elements.rate.value);
 
-  if(!amount) {
-    document.getElementById('amount_error').style.display = 'block';
-    mortgageAmount.classList.add('input_error');
-    document.getElementById('amount_symbol').classList.add('side_indicator_error');
-  } else {
-    document.getElementById('amount_error').style.display = 'none';
-    mortgageAmount.classList.remove('input_error');
-    document.getElementById('amount_symbol').classList.remove('side_indicator_error');
-  }
+  let valid = true;
+  const fields = [
+    { element: mortgageAmount, errorId: 'amount_error', symbolId: 'amount_symbol' },
+    { element: mortgageTerm, errorId: 'term_error', symbolId: 'term_symbol' },
+    { element: interestRate, errorId: 'rate_error', symbolId: 'rate_symbol' },
+  ];
 
-  // if (!amount || !term || !rate || !mortgageType.checked) {
-  //   inputs.forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
-  //   errorMessage.forEach(item => (item.style.display = 'block'));
-  //   inputsSymbol.forEach(item => {
-  //     item.style.backgroundColor = 'hsl(4, 69%, 50%)';
-  //     item.style.color = 'hsl(0, 0%, 100%)';
-  //   });
-  // } else {
-  //   inputs.forEach(item => (item.style.borderColor = 'hsl(203, 41%, 72%)'));
-  //   errorMessage.forEach(item => (item.style.display = 'none'));
-  //   inputsSymbol.forEach(item => {
-  //     item.style.backgroundColor = 'hsl(202, 86%, 94%)';
-  //     item.style.color = 'hsl(200, 24%, 40%)';
-  //   });
-  // }
-  console.log(amount);
+  fields.forEach(({ element, errorId, symbolId }) => {
+    if (!element.value) {
+      document.getElementById(errorId).style.display = 'block';
+      element.classList.add('input_error');
+      document.getElementById(symbolId).classList.add('side_indicator_error');
+      valid = false;
+    } else {
+      document.getElementById(errorId).style.display = 'none';
+      element.classList.remove('input_error');
+      document.getElementById(symbolId).classList.remove('side_indicator_error');
+    }
+  });
+
+    if(!mortgageType.checked) {
+      document.getElementById('type_error').style.display = 'block';
+      document.querySelectorAll('.input_wrapper').forEach(item => item.style.borderColor = 'hsl(4, 69%, 50%)')
+    } else {
+      document.getElementById('type_error').style.display = 'none';
+      document.querySelectorAll('.input_wrapper').forEach(item => item.style.borderColor = 'hsl(200, 24%, 40%)');
+    }
 
   const monthlyRate = rate / 100 / 12;
   const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));

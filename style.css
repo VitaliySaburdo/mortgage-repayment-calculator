@@ -141,10 +141,10 @@ a.link {
 .input_box {
   position: relative;
   margin-top: 15px;
-  margin-bottom: 30px;
   width: 100%;
   height: 48px;
 }
+
 input[type='number'] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
@@ -174,7 +174,7 @@ input[type='number']::-webkit-inner-spin-button {
 .error_message {
   display: none;
   color: hsl(4, 69%, 50%);
-  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 /* Icon */
@@ -234,10 +234,6 @@ input[type='radio']::before {
 
 .input_wrapper:last-child {
   margin-top: 10px;
-  margin-bottom: 22px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 40px;
-  }
 }
 
 input[type='radio']:checked::before {
@@ -320,9 +316,11 @@ button#btn {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-top: 22px;
   @media screen and (min-width: 768px) {
     margin-right: auto;
     width: 315px;
+    margin-top: 40px;
   }
 }
 
