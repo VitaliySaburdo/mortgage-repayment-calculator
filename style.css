@@ -98,6 +98,7 @@ body {
   }
   @media screen and (min-width: 1440px) {
     flex: 1;
+    max-width: 504px;
     border-radius: 20px 0 0 20px;
   }
 }
@@ -347,11 +348,11 @@ button#btn:hover {
   }
 }
 
-/* .valid_answer {
+.valid_answer {
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 45px;
-} */
+}
 
 .answer_img {
   margin-left: auto;
@@ -368,7 +369,4 @@ button#btn:hover {
 .text_answer {
   text-align: center;
   color: hsl(203, 41%, 72%);
-  @media screen and (min-width: 1440px) {
-    width: 400px;
-  }
 }
