@@ -8,7 +8,8 @@ const mortgageTypes = document.querySelectorAll('input[name="mortgage-type"]');
 const calculateBtn = document.getElementById('btn');
 const errorMessage = document.querySelectorAll('.error_message');
 const clearAll = document.querySelector('.link');
-const answerContainer = document.querySelector('.answer_container')
+const answerContainer = document.querySelector('.answer_container');
+const emptyContainer = document.querySelector('.empty_answer');
 
 const fields = [
   { element: mortgageAmount, errorId: 'amount_error', symbolId: 'amount_symbol' },
@@ -38,6 +39,9 @@ function handleSubmit(event) {
   });
 
   const isMortgageTypeChecked = Array.from(mortgageTypes).some(radio => radio.checked);
+  
+console.log(mortgageTypes[0].checked);
+
 
   if (!isMortgageTypeChecked) {
     document.getElementById('type_error').style.display = 'block';
@@ -58,9 +62,13 @@ function handleSubmit(event) {
   console.log(totalPayment);
 
   answerContainer.innerHTML = `
-  <div class="valid_answer">
-  <h2>Your result</h2>
-  </div>
+              <div class="valid_answer">
+                <h2 class="valid_title_answer">Your result</h2>
+                <p class="valid_text_answer">
+                  Your results are show below based on the information you provided. To adjust the
+                  results, edit the form and click "calculate repayments" again.
+                </p>
+              </div>
   `
 }
 
@@ -86,4 +94,6 @@ function onClearAll(event) {
       .querySelectorAll('.input_wrapper')
       .forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
   });
+  answerContainer.innerHTML = '';
+  answerContainer.appendChild(emptyContainer);
 }
