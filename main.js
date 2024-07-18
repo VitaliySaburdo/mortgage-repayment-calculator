@@ -17,6 +17,36 @@ const fields = [
   { element: interestRate, errorId: 'rate_error', symbolId: 'rate_symbol' },
 ];
 
+
+inputs.forEach(input => {
+  input.addEventListener('input', () => {
+
+    const field = fields.find(f => f.element === input);
+
+    if (!input.value) {
+      document.getElementById(field.errorId).style.display = 'block';
+      input.classList.add('input_error');
+      document.getElementById(field.symbolId).classList.add('side_indicator_error');
+    } else {
+      document.getElementById(field.errorId).style.display = 'none';
+      input.classList.remove('input_error');
+      document.getElementById(field.symbolId).classList.remove('side_indicator_error');
+    }
+  });
+});
+
+mortgageTypes.forEach(radio => {
+  radio.addEventListener('input', () => {
+    if (!Array.from(mortgageTypes).some(r => r.checked)) {
+      document.getElementById('type_error').style.display = 'block';
+      document.querySelectorAll('.input_wrapper').forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
+    } else {
+      document.getElementById('type_error').style.display = 'none';
+      document.querySelectorAll('.input_wrapper').forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
+    }
+  });
+});
+
 form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
