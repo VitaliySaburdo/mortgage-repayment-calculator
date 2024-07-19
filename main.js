@@ -86,10 +86,11 @@ console.log(mortgageTypes[0].checked);
       .forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
   }
 
+
+  const termInMonths = term * 12;
   const monthlyRate = rate / 100 / 12;
-  const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
+  const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
   const totalPayment = (monthlyPayment * term).toFixed(2);
-  console.log(totalPayment);
 
   answerContainer.innerHTML = `
               <div class="valid_answer">
@@ -98,7 +99,13 @@ console.log(mortgageTypes[0].checked);
                   Your results are show below based on the information you provided. To adjust the
                   results, edit the form and click "calculate repayments" again.
                 </p>
-              </div>
+                <div class="valid_box_answer">
+                  <p  class="valid_text_answer">Your monthly repayments</p>
+                  <h2 class="valid_repayments_answer">£ ${monthlyPayment.toFixed(2)}</h2>
+                  <div class="valid_line_answer"></div>
+                  <p class="valid_text_answer">Total you'll repay over the term</p>
+                  <h3 class="valid_repay_answer">£ ${totalPayment}</h3>
+                </div>
   `
 }
 
