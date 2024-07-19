@@ -136,8 +136,7 @@ a.link {
   flex-direction: column;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
   }
 }
 
@@ -350,6 +349,9 @@ button#btn:hover {
 
 .valid_answer {
   padding: 35px 23px 30px 23px;
+  @media screen and (min-width: 1440px) {
+    padding: 40px;
+  }
 }
 
 .empty_answer_img {
@@ -372,6 +374,9 @@ button#btn:hover {
 .valid_title_answer {
   color: hsl(202, 86%, 94%);
   margin-bottom: 20px;
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+  }
 }
 
 .valid_text_answer {
@@ -380,10 +385,15 @@ button#btn:hover {
 }
 
 .valid_box_answer {
+  margin-top: 20px;
   padding: 25px 15px;
   background-color: hsl(201, 55%, 6%);
   border-radius: 10px;
   box-shadow: 0 -5px hsl(61, 70%, 52%);
+  @media screen and (min-width: 1440px) {
+    margin-top: 40px;
+    padding: 35px 30px;
+  }
 }
 
 .valid_line_answer {
@@ -391,6 +401,9 @@ button#btn:hover {
   height: 1px;
   background-color: hsl(203, 41%, 72%);
   margin-bottom: 20px;
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 35px;
+  }
 }
 
 .valid_repayments_answer {
