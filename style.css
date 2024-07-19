@@ -163,10 +163,9 @@ input[type='number'] {
   align-items: center;
 }
 
-input[type='number'].input_error{
+input[type='number'].input_error {
   border: 2px solid hsl(4, 69%, 50%);
 }
-
 
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
@@ -350,7 +349,7 @@ button#btn:hover {
 }
 
 .valid_answer {
-padding: 35px 23px 30px 23px;
+  padding: 35px 23px 30px 23px;
 }
 
 .empty_answer_img {
@@ -380,6 +379,8 @@ padding: 35px 23px 30px 23px;
   margin-bottom: 30px;
 }
 
-.valid_box_answer{
+.valid_box_answer {
+  padding: 25px 15px;
   background-color: hsl(201, 55%, 6%);
+  border-radius: 10px;
 }
