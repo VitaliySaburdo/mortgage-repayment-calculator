@@ -376,11 +376,30 @@ button#btn:hover {
 
 .valid_text_answer {
   color: hsl(203, 41%, 72%);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .valid_box_answer {
   padding: 25px 15px;
   background-color: hsl(201, 55%, 6%);
   border-radius: 10px;
+  box-shadow: 0 -5px hsl(61, 70%, 52%);
+}
+
+.valid_line_answer {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(203, 41%, 72%);
+  margin-bottom: 20px;
+}
+
+.valid_repayments_answer {
+  font-size: 30px;
+  color: hsl(61, 70%, 52%);
+  margin-bottom: 20px;
+}
+
+.valid_repay_answer {
+  font-size: 18px;
+  color: hsl(202, 86%, 94%);
 }
