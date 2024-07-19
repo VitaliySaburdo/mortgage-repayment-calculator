@@ -1,5 +1,5 @@
 const form = document.querySelector('form');
-const inputs = document.querySelectorAll('input[type="number"]');
+const inputs = document.querySelectorAll('input[type="text"]');
 const inputsSymbol = document.querySelectorAll('.side_indicator');
 const mortgageAmount = document.getElementById('amount');
 const mortgageTerm = document.getElementById('term');
@@ -17,20 +17,21 @@ const fields = [
   { element: interestRate, errorId: 'rate_error', symbolId: 'rate_symbol' },
 ];
 
-
 inputs.forEach(input => {
   input.addEventListener('input', () => {
 
     const field = fields.find(f => f.element === input);
 
-    if (!input.value) {
+    if (!input.value || !parseFloat(input.value)) {
       document.getElementById(field.errorId).style.display = 'block';
+      document.getElementById(field.errorId).textContent = 'Value must be a number';
       input.classList.add('input_error');
       document.getElementById(field.symbolId).classList.add('side_indicator_error');
     } else {
       document.getElementById(field.errorId).style.display = 'none';
       input.classList.remove('input_error');
       document.getElementById(field.symbolId).classList.remove('side_indicator_error');
+
     }
   });
 });
@@ -43,6 +44,7 @@ mortgageTypes.forEach(radio => {
     } else {
       document.getElementById('type_error').style.display = 'none';
       document.querySelectorAll('.input_wrapper').forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
+
     }
   });
 });
@@ -56,22 +58,21 @@ function handleSubmit(event) {
   const rate = parseFloat(form.elements.rate.value);
 
   fields.forEach(({ element, errorId, symbolId }) => {
-    if (!element.value) {
+    if (!element.value || !parseFloat(element.value)) {
       document.getElementById(errorId).style.display = 'block';
+      document.getElementById(errorId).textContent = 'This field is required';
       element.classList.add('input_error');
       document.getElementById(symbolId).classList.add('side_indicator_error');
-      return;
+      return 
     } else {
       document.getElementById(errorId).style.display = 'none';
       element.classList.remove('input_error');
       document.getElementById(symbolId).classList.remove('side_indicator_error');
+      renderResult(amount, term, rate)
     }
   });
 
   const isMortgageTypeChecked = Array.from(mortgageTypes).some(radio => radio.checked);
-  
-console.log(mortgageTypes[0].checked);
-
 
   if (!isMortgageTypeChecked) {
     document.getElementById('type_error').style.display = 'block';
@@ -86,7 +87,9 @@ console.log(mortgageTypes[0].checked);
       .forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
   }
 
+}
 
+function renderResult(amount, term, rate){
   const termInMonths = term * 12;
   const monthlyRate = rate / 100 / 12;
   const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
@@ -108,7 +111,6 @@ console.log(mortgageTypes[0].checked);
                 </div>
   `
 }
-
 clearAll.addEventListener('click', onClearAll);
 
 function onClearAll(event) {
