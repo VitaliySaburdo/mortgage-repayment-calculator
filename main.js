@@ -58,18 +58,20 @@ function handleSubmit(event) {
   const rate = parseFloat(form.elements.rate.value);
   
 
+  let isValid = false;
+
   fields.forEach(({ element, errorId, symbolId }) => {
     if (!element.value || !parseFloat(element.value)) {
       document.getElementById(errorId).style.display = 'block';
       document.getElementById(errorId).textContent = 'This field is required';
       element.classList.add('input_error');
       document.getElementById(symbolId).classList.add('side_indicator_error');
-      return 
+      isValid = false;
     } else {
       document.getElementById(errorId).style.display = 'none';
       element.classList.remove('input_error');
       document.getElementById(symbolId).classList.remove('side_indicator_error');
-      renderResult(amount, term, rate)
+      isValid = true;
     }
   });
 
@@ -80,15 +82,16 @@ function handleSubmit(event) {
     document
       .querySelectorAll('.input_wrapper')
       .forEach(item => (item.style.borderColor = 'hsl(4, 69%, 50%)'));
-    return;
+    isValid = false;
   } else {
     document.getElementById('type_error').style.display = 'none';
     document
       .querySelectorAll('.input_wrapper')
       .forEach(item => (item.style.borderColor = 'hsl(200, 24%, 40%)'));
+    isValid = true;
   }
 
-  if (isFormValid) {
+  if (isValid) {
     renderResult(amount, term, rate);
   }
 
