@@ -147,7 +147,7 @@ a.link {
   height: 48px;
 }
 
-input[type='text'] {
+input[type='number'] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -162,12 +162,12 @@ input[type='text'] {
   align-items: center;
 }
 
-input[type='text'].input_error {
+input[type='number'].input_error {
   border: 2px solid hsl(4, 69%, 50%);
 }
 
-input[type='text']::-webkit-outer-spin-button,
-input[type='text']::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

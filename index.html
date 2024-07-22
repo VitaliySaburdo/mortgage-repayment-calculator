@@ -47,7 +47,7 @@
                 <label> Mortgage Amount</label>
                 <div class="input_box">
                   <span class="side_indicator left_side" id="amount_symbol">£</span>
-                  <input class="left_side" type="text" id="amount" name="amount" />
+                  <input class="left_side" type="number" step="0.01" id="amount" name="amount" />
                 </div>
                 <span class="error_message" id="amount_error"></span>
                 <div style="margin-bottom: 30px"></div>
@@ -56,7 +56,7 @@
                     <label> Mortgage Term</label>
                     <div class="input_box">
                       <span class="side_indicator right_side" id="term_symbol">years</span>
-                      <input class="right_side" type="text" id="term" name="term" />
+                      <input class="right_side" type="number" step="0.01" id="term" name="term" />
                     </div>
                     <span class="error_message" id="term_error"></span>
                     <div style="margin-bottom: 30px"></div>
@@ -65,7 +65,7 @@
                     <label>Interest Rate</label>
                     <div class="input_box">
                       <span class="side_indicator right_side" id="rate_symbol">%</span>
-                      <input class="right_side" type="text" id="rate" name="rate" />
+                      <input class="right_side" type="number" step="0.01" id="rate" name="rate" />
                     </div>
                     <span class="error_message" id="rate_error"></span>
                     <div style="margin-bottom: 30px"></div>
