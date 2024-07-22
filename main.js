@@ -17,24 +17,24 @@ const fields = [
   { element: interestRate, errorId: 'rate_error', symbolId: 'rate_symbol' },
 ];
 
-// inputs.forEach(input => {
-//   input.addEventListener('input', () => {
+inputs.forEach(input => {
+  input.addEventListener('input', () => {
 
-//     const field = fields.find(f => f.element === input);
+    const field = fields.find(f => f.element === input);
 
-//     if (!input.value) {
-//       document.getElementById(field.errorId).style.display = 'block';
-//       document.getElementById(field.errorId).textContent = 'Value must be a number';
-//       input.classList.add('input_error');
-//       document.getElementById(field.symbolId).classList.add('side_indicator_error');
-//     } else {
-//       document.getElementById(field.errorId).style.display = 'none';
-//       input.classList.remove('input_error');
-//       document.getElementById(field.symbolId).classList.remove('side_indicator_error');
+    if (!input.value && !'.') {
+      document.getElementById(field.errorId).style.display = 'block';
+      document.getElementById(field.errorId).textContent = 'Value must be a number';
+      input.classList.add('input_error');
+      document.getElementById(field.symbolId).classList.add('side_indicator_error');
+    } else {
+      document.getElementById(field.errorId).style.display = 'none';
+      input.classList.remove('input_error');
+      document.getElementById(field.symbolId).classList.remove('side_indicator_error');
 
-//     }
-//   });
-// });
+    }
+  });
+});
 
 mortgageTypes.forEach(radio => {
   radio.addEventListener('input', () => {
@@ -56,7 +56,6 @@ function handleSubmit(event) {
   const amount = parseFloat(form.elements.amount.value);
   const term = parseInt(form.elements.term.value);
   const rate = parseFloat(form.elements.rate.value);
-  
 
   let isValid = false;
 
