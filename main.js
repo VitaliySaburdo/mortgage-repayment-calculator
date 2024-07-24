@@ -102,7 +102,7 @@ function renderResult(amount, term, rate){
   const termInMonths = term * 12;
   const monthlyRate = rate / 100 / 12;
   const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
-  const totalPayment = monthlyPayment * term
+  const totalPayment = monthlyPayment * termInMonths;
 
   function ResultNumberToString(result){
     let str = String(result.toFixed(2));
@@ -131,6 +131,8 @@ function renderResult(amount, term, rate){
                 </div>
   `
 }
+
+
 clearAll.addEventListener('click', onClearAll);
 
 function onClearAll(event) {
