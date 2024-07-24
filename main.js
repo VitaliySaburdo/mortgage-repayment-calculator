@@ -17,6 +17,8 @@ const fields = [
   { element: interestRate, errorId: 'rate_error', symbolId: 'rate_symbol' },
 ];
 
+
+
 inputs.forEach(input => {
   input.addEventListener('input', () => {
 
@@ -100,7 +102,18 @@ function renderResult(amount, term, rate){
   const termInMonths = term * 12;
   const monthlyRate = rate / 100 / 12;
   const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -termInMonths));
-  const totalPayment = (monthlyPayment * term).toFixed(2);
+  const totalPayment = monthlyPayment * term
+
+  function ResultNumberToString(result){
+    let str = String(result.toFixed(2));
+    let strArray = str.split("");
+    
+    for (let i = strArray.length - 6; i > 0; i -= 3) {
+      strArray.splice(i, 0, ",");
+    }
+    
+   return str = strArray.join("");
+  }
 
   answerContainer.innerHTML = `
               <div class="valid_answer">
@@ -111,10 +124,10 @@ function renderResult(amount, term, rate){
                 </p>
                 <div class="valid_box_answer">
                   <p  class="valid_text_answer">Your monthly repayments</p>
-                  <h2 class="valid_repayments_answer">£ ${monthlyPayment.toFixed(2)}</h2>
+                  <h2 class="valid_repayments_answer">£ ${ResultNumberToString(monthlyPayment)}</h2>
                   <div class="valid_line_answer"></div>
                   <p class="valid_text_answer">Total you'll repay over the term</p>
-                  <h3 class="valid_repay_answer">£ ${totalPayment}</h3>
+                  <h3 class="valid_repay_answer">£ ${ResultNumberToString(totalPayment)}</h3>
                 </div>
   `
 }
