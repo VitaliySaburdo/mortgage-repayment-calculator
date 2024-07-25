@@ -16,12 +16,13 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
 I offer to your attention a loan calculator with the help of which you can easily see the monthly payments on the loan and get the total amount, taking into account the body of the loan, as well as accrued interest for using the inheritance.
 All you need to do is fill in all the fields of the form, namely the loan amount, the term of the loan, and the interest on the loan.
+
+![Design preview for the Mortgage repayment calculator](./assets/images/readme/preview.jpg)
 
 ### The challenge
 
@@ -35,7 +36,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/images/readme/Empty%20form.jpg)
+![](./assets/images/readme/Valid%20form.jpg)
+![](./assets/images/readme/Error%20form.jpg)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
